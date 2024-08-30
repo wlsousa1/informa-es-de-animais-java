@@ -1,0 +1,94 @@
+// Classe Tigre
+class Tigre {
+    String nome;
+    String sexo;
+    int idade;
+    double altura;
+
+    // Construtor
+    public Tigre() {
+        this.nome = "";
+        this.sexo = "";
+        this.idade = 0;
+        this.altura = 0.0;
+    }
+
+    // Método para exibir informações do tigre
+    public void exibirTigre() {
+        System.out.println("Nome: " + this.nome);
+        System.out.println("Sexo: " + this.sexo);
+        System.out.println("Idade: " + this.idade);
+        System.out.println("Altura: " + this.altura);
+    }
+
+    // Método para exibir mensagem de felicidade
+    public void feliz() {
+        System.out.println(this.nome + " Tigre está rugindo");
+    }
+
+    // Método para exibir mensagem de raiva
+    public void raiva() {
+        System.out.println(this.nome + " Tigre está com raiva");
+    }
+
+    // Método para exibir mensagem de doença
+    public void doente() {
+        System.out.println(this.nome + " Tigre está doente");
+    }
+
+    // Método para exibir mensagem de tristeza
+    public void triste() {
+        System.out.println(this.nome + " Tigre está triste");
+    }
+}
+
+// Classe App
+public class Main {
+    // Função para limpar a tela
+    public static void limparTela() {
+        try {
+            if (System.getProperty("os.name").contains("Windows"))
+                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+            else
+                new ProcessBuilder("clear").inheritIO().start().waitFor();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void main(String[] args) {
+        // Criando os objetos Tigre
+        Tigre T1 = new Tigre();
+        T1.nome = "Pou";
+        T1.sexo = "F";
+        T1.idade = 5;
+        T1.altura = 1.22;
+
+        Tigre T2 = new Tigre();
+        T2.nome = "Flavio";
+        T2.sexo = "M";
+        T2.idade = 3;
+        T2.altura = 1.13;
+
+        Tigre T3 = new Tigre();
+        T3.nome = "Joana";
+        T3.sexo = "F";
+        T3.idade = 3;
+        T3.altura = 1.05;
+
+        // Limpa a tela
+        limparTela();
+
+        // Saída de Informações
+        System.out.println("Verificando o estado dos Tigres:\n");
+        T1.exibirTigre();
+        T1.feliz();
+
+        T2.exibirTigre();
+        T2.raiva();
+
+        T3.exibirTigre();
+        T3.doente();
+        T3.triste();
+    }
+}
